@@ -40,7 +40,6 @@ const AddTodoForm: React.FC = () => {
   const handleOnSubmitTodo = async (event: React.SyntheticEvent) => {
     event.preventDefault();
     const colorObject = getColorObject(colors, colorSelected);
-    console.log('colorObject: ', colorObject)
     dispatch(addTodo(todoText, colorObject));
     clearForm();
   }

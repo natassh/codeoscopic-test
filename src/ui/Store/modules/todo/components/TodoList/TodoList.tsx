@@ -5,7 +5,6 @@ import {Todo} from '../../../../modules/todo/types/todo';
 import {useDispatch} from 'react-redux';
 import {deleteTodo} from '../../actions';
 import {Heading} from '../../../../../App/components/Heading'
-
 import './TodoList.css';
 
 const TodoList: React.FC = () => {
@@ -25,7 +24,6 @@ const TodoList: React.FC = () => {
           const style = {
             background: `#${todo.color.hex}`
           };
-          console.log(style)
           return (
             <li key={todo.id} style={style}>
               <p>{todo.text}</p>

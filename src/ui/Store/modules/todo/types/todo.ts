@@ -1,10 +1,10 @@
 export type Color = {
-    hex: string
+    hex: string;
     name: string;
 }
   
 export type Todo = {
-    id: number,
-    text: string,
-    color: Color
+    id: number;
+    text: string;
+    color: Color;
 }

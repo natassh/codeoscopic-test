@@ -6,6 +6,6 @@ export type AddTodoAction = {
 }
 export type DeleteTodoAction = {
     type: string;
-    payload: number
+    payload: number;
 }
 export type TodoActions = AddTodoAction | DeleteTodoAction;

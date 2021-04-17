@@ -27,5 +27,5 @@ const todoReducer = (state = initialState , action: TodoActions): Todo[] => {
     }
 }
 
-export { todoReducer };
+export { todoReducer, setTodoState, setDeleteTodo };
 

@@ -1,9 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../../../Store/rootReducers';
-import {Todo} from '../../../../modules/todo/types/todo';
-import {useDispatch} from 'react-redux';
 import {deleteTodo} from '../../actions';
+import {Todo} from '../../../../modules/todo/types/todo';
 import {Heading} from '../../../../../App/components/Heading'
 import './TodoList.css';
 
@@ -12,7 +11,7 @@ const TodoList: React.FC = () => {
   const todoList = useSelector( (state: RootState) => state.todo);
 
   const handleDeleteTodo = (id:number): void => {
-     dispatch(deleteTodo(id));
+    dispatch(deleteTodo(id));
   }
   
   return todoList && (

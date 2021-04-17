@@ -1,10 +1,8 @@
 .cw {
   width: 1200px;
-  /* padding: 0 1rem 0 1rem; */
   margin: 0 auto;
   padding: 0 1rem 0 1rem;
 }
-/* RWD */
 @media screen and (max-width: 1199px) {
   .cw {
     width: 1024px;

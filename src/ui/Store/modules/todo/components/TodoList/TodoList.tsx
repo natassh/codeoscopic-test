@@ -4,6 +4,8 @@ import { RootState } from '../../../../../Store/rootReducers';
 import {Todo} from '../../../../modules/todo/types/todo';
 import {useDispatch} from 'react-redux';
 import {deleteTodo} from '../../actions';
+import {Heading} from '../../../../../App/components/Heading'
+
 import './TodoList.css';
 
 const TodoList: React.FC = () => {
@@ -15,6 +17,8 @@ const TodoList: React.FC = () => {
   }
   
   return todoList && (
+    <article className="TodoList">
+    <Heading tag="h2" className="main-title" >Todo List</Heading>
     <ul>
       {
         todoList.map((todo: Todo) => {
@@ -30,8 +34,8 @@ const TodoList: React.FC = () => {
           )
         })
       }
-      
     </ul>
+    </article>
   );
 };
 

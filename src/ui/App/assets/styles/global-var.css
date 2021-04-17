@@ -1,8 +1,9 @@
 :root {
   --bg: #F2F2F2;
-  --main-color: #037169;
-  --second-color: #A4D96D;
+  --main-color: #EAC649;
+  --second-color: #000;
   --white-color: #fff;
+  --border-color: #e5e7eb;
   --primary-color-text: #303333;
   --second-color-text: #585B5B;
   --third-color-text: #C7C7C7;
@@ -11,8 +12,7 @@
   --linkedin-color: #0E76A8;
   --github-color: #000;
 
-  --main-font: 'Kumbh Sans', sans-serif;
-  --bold: 700;
+  --main-font: 'Work Sans', sans-serif;
   --semi-bold: 600;
   --medium: 500;
   --regular: 400;

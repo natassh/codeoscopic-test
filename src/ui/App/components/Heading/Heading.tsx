@@ -1,4 +1,5 @@
 import React from 'react';
+import './Heading.css';
 
 const Heading: React.FC<HeadingProps> = ({ className="", children, tag="h2" }) => {
   const classes = `${className} Heading`

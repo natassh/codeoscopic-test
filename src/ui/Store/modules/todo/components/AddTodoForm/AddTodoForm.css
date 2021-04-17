@@ -1,0 +1,40 @@
+.AddTodoForm {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+    & select {
+        width: 50%;
+        height: 3rem;
+        padding: 0 1.5rem 0 1.5rem;
+        margin: 1.25rem auto;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 1px 0 1px rgb(0 0 0 / 3%);
+        border-radius: 0.5rem;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url(../../../../../App/assets/images/down-arrow.svg);
+        background-repeat: no-repeat;
+        background-position: right .7em top 50%, 0 0;
+        background-size: 1rem;
+        text-transform: uppercase;
+        font-family: var(--main-font);
+        font-weight: var(--medium);
+        color: var(--primary-color-text);
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .AddTodoForm {
+        width: 100%;
+        & select {
+            width: 60%;
+        }
+    }
+} 

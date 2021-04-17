@@ -1,0 +1,25 @@
+.main-title {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-family: var(--title-font);
+  font-weight: var(--bold);
+  color: var(--font-color);
+  font-size: 3rem;
+  position: relative;
+  text-align: center;
+}
+.main-title:before {
+  display: block;
+  content: "";
+  width: 100px;
+  background-color: var(--main-color);
+  height: 4px;
+  position: absolute;
+  bottom: -10px;
+  left: calc( ( 100% -  100px ) / 2 );
+}
+h1, h2, h3, h4, h5, h6 {
+  margin:0;
+  padding: 0;
+}

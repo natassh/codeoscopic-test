@@ -13,12 +13,13 @@ const TodoList: React.FC = () => {
   const handleDeleteTodo = (id:number): void => {
     dispatch(deleteTodo(id));
   }
-  
+  if (todoList.length <= 0) {
+    return null
+  }
+
   return (
     <article className="TodoList">
-          {(todoList.length > 0) && (
-            <Heading tag="h2" className="main-title" >Todo List</Heading>
-          )}
+        <Heading tag="h2" className="main-title" >Todo List</Heading>
         <ul>
           {
             todoList.map((todo: Todo) => {

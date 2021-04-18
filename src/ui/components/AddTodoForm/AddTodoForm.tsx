@@ -1,47 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
 import {addTodo} from '../../Store/modules/todo/actions';
 import {Color} from '../../Store/modules/todo/types/todo';
-import { getColors } from '../../../core/todo/services/getColors';
-import { getColorObject } from '../../../core/todo/utils/getColorObject';
 import Input from '../../App/components/Input';
 import './AddTodoForm.css';
+import { Select } from '../Select';
 
 const AddTodoForm: React.FC = () => {
   const dispatch = useDispatch();
 
   const [todoText, setTodoText] = useState<string>('');
-  const [colors, setColors] = useState<Color[]>([]);
-  const [colorSelected, setColorSelected] = useState<string>('')
-
-  useEffect(() => {
-    const initColors = async () => {
-      const colors: Color[] = await getColors();
-      setColors(colors);
-    }
-    initColors()
-  }, []);
-
-  useEffect(() => {
-    if(colors.length > 0) {
-      setColorSelected(colors[0].name)
-    }
-  }, [colors])
+  const [colorObject, setColorObject] = useState<Color>({hex: "#fff",name: "red"})
 
   const handleOnChangeTextTodo = (todoText:string) => {
     setTodoText(todoText);
   };
 
-  const handleOnChangeColor = (event: React.ChangeEvent<HTMLSelectElement>): void => {
-    setColorSelected(event.target.value);
+  const handleOnchangeSelectValue = (color: Color): void => {
+    setColorObject(color);
   }
+
   const clearForm = () => {
     setTodoText('');
   };
 
   const handleOnSubmitTodo = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-    const colorObject = getColorObject(colors, colorSelected);
     dispatch(addTodo(todoText, colorObject));
     clearForm();
   }
@@ -56,11 +40,9 @@ const AddTodoForm: React.FC = () => {
         value={todoText}
         placeholder = "Create todo"
        />
-        <select defaultValue={colorSelected} onChange={handleOnChangeColor}>
-            {colors.map((color: Color)=> {
-              return <option value={color.name} key={color.hex}>{color.name}</option>
-            })}
-        </select>
+       <Select
+        onChange={handleOnchangeSelectValue}
+       />
         <button className="AddTodoForm__Button-submit">Add</button>
     </form>
   );

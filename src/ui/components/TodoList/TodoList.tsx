@@ -14,26 +14,28 @@ const TodoList: React.FC = () => {
     dispatch(deleteTodo(id));
   }
   
-  return todoList && (
+  return (
     <article className="TodoList">
-    <Heading tag="h2" className="main-title" >Todo List</Heading>
-    <ul>
-      {
-        todoList.map((todo: Todo) => {
-          const style = {
-            background: `#${todo.color.hex}`
-          };
-          return (
-            <li key={todo.id} style={style}>
-              <p>{todo.text}</p>
-              <button onClick={() => handleDeleteTodo(todo.id)}>Eliminar</button>
-            </li>
-          )
-        })
-      }
-    </ul>
+          {(todoList.length > 0) && (
+            <Heading tag="h2" className="main-title" >Todo List</Heading>
+          )}
+        <ul>
+          {
+            todoList.map((todo: Todo) => {
+              const style = {
+                background: `#${todo.color.hex}`
+              };
+              return (
+                <li key={todo.id} style={style}>
+                  <p>{todo.text}</p>
+                  <button onClick={() => handleDeleteTodo(todo.id)}>Eliminar</button>
+                </li>
+              )
+            })
+          }
+        </ul>
     </article>
-  );
+  )  
 };
 
 export {TodoList};

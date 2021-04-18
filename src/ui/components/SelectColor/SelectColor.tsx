@@ -26,6 +26,7 @@ const SelectColor: React.FC<SelectColorProps> = ({ onChange}) => {
   useEffect(() => {
     const colorObject = getColorObject(colors, colorSelected); 
     onChange(colorObject);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [colorSelected])
 
 

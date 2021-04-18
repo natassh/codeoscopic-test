@@ -1,4 +1,4 @@
-# Prueba Playtomic de Natacha
+# Prueba Codeoscopic de Natacha
 
 ⚛️ La aplicación está desarrollada con React y TypeScript usando el boilerplate CRA.
 

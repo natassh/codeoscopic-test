@@ -3,14 +3,14 @@ import {useDispatch} from 'react-redux';
 import {addTodo} from '../../Store/modules/todo/actions';
 import {Color} from '../../Store/modules/todo/types/todo';
 import Input from '../../App/components/Input';
+import { SelectColor } from '../SelectColor';
 import './AddTodoForm.css';
-import { Select } from '../Select';
 
 const AddTodoForm: React.FC = () => {
   const dispatch = useDispatch();
 
   const [todoText, setTodoText] = useState<string>('');
-  const [colorObject, setColorObject] = useState<Color>({hex: "#fff",name: "red"})
+  const [colorObject, setColorObject] = useState<Color>({hex: "",name: ""})
 
   const handleOnChangeTextTodo = (todoText:string) => {
     setTodoText(todoText);
@@ -40,7 +40,7 @@ const AddTodoForm: React.FC = () => {
         value={todoText}
         placeholder = "Create todo"
        />
-       <Select
+       <SelectColor
         onChange={handleOnchangeSelectValue}
        />
         <button className="AddTodoForm__Button-submit">Add</button>

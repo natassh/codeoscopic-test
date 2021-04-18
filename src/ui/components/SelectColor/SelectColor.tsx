@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import { getColors } from '../../../core/todo/services/getColors';
 import { getColorObject } from '../../../core/todo/utils/getColorObject';
 import {Color} from '../../Store/modules/todo/types/todo';
-import './Select.css';
+import './SelectColor.css';
 
-const Select: React.FC<InputProps> = ({ onChange}) => {
+const SelectColor: React.FC<SelectColorProps> = ({ onChange}) => {
 
   const [colors, setColors] = useState<Color[]>([]);
   const [colorSelected, setColorSelected] = useState<string>('')
@@ -43,8 +43,8 @@ const Select: React.FC<InputProps> = ({ onChange}) => {
   );
 };
 
-export {Select};
+export {SelectColor};
 
-type InputProps = {
+type SelectColorProps = {
   onChange: (colorObject: Color) => void
 }

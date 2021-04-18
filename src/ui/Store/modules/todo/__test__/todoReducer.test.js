@@ -23,10 +23,13 @@ describe('todos reducer', () => {
     ] 
 
     it('should return empty array as initial state', () => {
+
+        // Assert
         expect(todoReducer(undefined, {})).toEqual([]);
     })
 
     it('should handle ADD_TODO', () => {
+        
         // Arrange 
         const todo3 = {
             id: 3,
@@ -36,21 +39,27 @@ describe('todos reducer', () => {
                 name: "orange"
             }
         }
+
         // Act      
         const state = todoReducer(initialState, {
             type: types.ADD_TODO,
             payload: todo3
         });
+
         // Assert
         expect(state).toHaveLength(3)
         
     })
 
     it('should return the array with the todo id 2 removed', () => {
+
+        // Act 
         const state = todoReducer(initialState, {
             type: types.DELETE_TODO,
             payload: 2
         });
+
+        // Assert
         expect(state).toHaveLength(1)
     })
 

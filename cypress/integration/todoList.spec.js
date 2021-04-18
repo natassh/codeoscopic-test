@@ -24,4 +24,24 @@ context('TODO List App', () => {
         todoList.should('have.length', 1);
 
     })
+
+    it('Can add another todo', () => {
+
+        const inputText = cy.get('.AddTodoForm__Input');
+        inputText.type('My second todo').should('have.value', 'My second todo')
+
+        const buttonAddTodo = cy.get('.AddTodoForm__Button-submit');
+        buttonAddTodo.click();
+
+
+    })
+    it('Can delete a todo', () => {
+
+        const buttonAddTodo = cy.get(':nth-child(1) > button')
+        buttonAddTodo.click();
+
+        const todoList = cy.get('.TodoList ul')
+        todoList.should('have.length', 1);
+
+    })
 });

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {useDispatch} from 'react-redux';
-import {addTodo} from '../../actions';
-import {Color} from '../../types/todo';
-import { getColors } from '../../../../../../core/todo/services/getColors';
-import { getColorObject } from '../../../../../../core/todo/utils/getColorObject';
-import Input from '../../../../../App/components/Input';
+import {addTodo} from '../../Store/modules/todo/actions';
+import {Color} from '../../Store/modules/todo/types/todo';
+import { getColors } from '../../../core/todo/services/getColors';
+import { getColorObject } from '../../../core/todo/utils/getColorObject';
+import Input from '../../App/components/Input';
 import './AddTodoForm.css';
 
 const AddTodoForm: React.FC = () => {
@@ -12,7 +12,6 @@ const AddTodoForm: React.FC = () => {
 
   const [todoText, setTodoText] = useState<string>('');
   const [colors, setColors] = useState<Color[]>([]);
-  console.log('colors: ', colors)
   const [colorSelected, setColorSelected] = useState<string>('')
 
   useEffect(() => {

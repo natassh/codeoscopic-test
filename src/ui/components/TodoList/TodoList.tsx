@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../../../../Store/rootReducers';
-import {deleteTodo} from '../../actions';
-import {Todo} from '../../../../modules/todo/types/todo';
-import {Heading} from '../../../../../App/components/Heading'
+import { RootState } from '../../Store/rootReducers';
+import {deleteTodo} from '../../Store/modules/todo/actions';
+import {Todo} from '../../Store/modules/todo/types/todo';
+import {Heading} from '../../App/components/Heading'
 import './TodoList.css';
 
 const TodoList: React.FC = () => {
-  const dispatch = useDispatch();
   const todoList = useSelector( (state: RootState) => state.todo);
+  const dispatch = useDispatch();
 
   const handleDeleteTodo = (id:number): void => {
     dispatch(deleteTodo(id));
